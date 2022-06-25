@@ -16,6 +16,7 @@ module KoiSendle
       }
 
       resp = get_request("products", params: params).body 
+      puts resp
       
       products = []
       

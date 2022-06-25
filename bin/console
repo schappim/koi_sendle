@@ -11,7 +11,7 @@ require "koi_sendle"
 # require "pry"
 # Pry.start
 
-client = KoiSendle::Client.new(api_key: ENV['SENDLE_API_KEY'], api_secret: ENV['SENDLE_API_SECRET'], sandbox: true)
+client = KoiSendle::Client.new(api_key: ENV['SENDLE_API_KEY'], api_secret: ENV['SENDLE_API_SECRET'], sandbox: false)
 
 require "irb"
 IRB.start(__FILE__)

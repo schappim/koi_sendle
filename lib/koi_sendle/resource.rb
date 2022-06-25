@@ -29,21 +29,23 @@ module KoiSendle
     end
 
     def handle_response(response)
+      # puts response.body
+      # puts response.status
       case response.status
       when 400
-        raise Error, "Your request was malformed. #{response.body["error"]}"
+        raise Error, "#{response.body["error_description"]}"
       when 401
-        raise Error, "You did not supply valid authentication credentials. #{response.body["error"]}"
+        raise Error, "#{response.body["error_description"]}"
       when 403
-        raise Error, "You are not allowed to perform that action. #{response.body["error"]}"
+        raise Error, "#{response.body["error_description"]}"
       when 404
-        raise Error, "No results were found for your request. #{response.body["error"]}"
+        raise Error, "#{response.body["error_description"]}"
       when 429
-        raise Error, "Your request exceeded the API rate limit. #{response.body["error"]}"
+        raise Error, "#{response.body["error_description"]}"
       when 500
-        raise Error, "We were unable to perform the request due to server-side problems. #{response.body["error"]}"
+        raise Error, "#{response.body["error_description"]}"
       when 503
-        raise Error, "You have been rate limited for sending more than 20 requests per second. #{response.body["error"]}"
+        raise Error, "#{response.body["error_description"]}"
       end
 
       response
