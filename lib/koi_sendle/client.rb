@@ -15,7 +15,6 @@ module KoiSendle
       @api_secret = api_secret
       @adapter = adapter
 
-      # Test stubs for requests
       @stubs = stubs
     end
 

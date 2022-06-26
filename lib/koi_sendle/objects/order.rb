@@ -1,6 +1,5 @@
 module KoiSendle
   class Order < Object
-
     def cancel!
       cancel
       refresh!
