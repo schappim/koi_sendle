@@ -1,6 +1,5 @@
 module KoiSendle
   class OrderResource < Resource
-      
     def create(**attributes)
       Order.new(post_request("orders", body: attributes).body, self)
     end
@@ -20,7 +19,7 @@ module KoiSendle
     def cancel(order_id)
       Order.new(delete_request("orders/#{order_id}").body, self)
     end
-  
+
     def refresh(order)
       get_request("orders/#{order.order_id}", params: {}, headers: {}).body
     end
@@ -33,12 +32,9 @@ module KoiSendle
       DateTime.parse(get_request("tracking/#{sendle_reference}").body.dig("status").dig("last_changed_at"))
     end
 
-
     def track(sendle_reference)
       resp = get_request("tracking/#{sendle_reference}").body.dig("tracking_events")
-      return resp.map{|e| Tracking.new(e, self)}
+      resp.map { |e| Tracking.new(e, self) }
     end
-
-
   end
 end

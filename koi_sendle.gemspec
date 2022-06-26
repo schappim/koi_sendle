@@ -3,15 +3,15 @@
 require_relative "lib/koi_sendle/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "koi_sendle"
-  spec.version       = KoiSendle::VERSION
-  spec.authors       = ["Marcus Schappi"]
-  spec.email         = ["marcus@schappi.com"]
+  spec.name = "koi_sendle"
+  spec.version = KoiSendle::VERSION
+  spec.authors = ["Marcus Schappi"]
+  spec.email = ["marcus@schappi.com"]
 
-  spec.summary       = "Sendle API Wrapper"
+  spec.summary = "Sendle API Wrapper"
   # spec.description   = "TODO: Write a longer description or delete this line."
-  spec.homepage      = "https://koi.app"
-  spec.license       = "MIT"
+  spec.homepage = "https://koi.app"
+  spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
@@ -27,8 +27,8 @@ Gem::Specification.new do |spec|
       (f == __FILE__) || f.match(%r{\A(?:(?:test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
     end
   end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
+  spec.bindir = "exe"
+  spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem

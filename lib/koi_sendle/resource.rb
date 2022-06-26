@@ -29,23 +29,21 @@ module KoiSendle
     end
 
     def handle_response(response)
-      # puts response.body
-      # puts response.status
       case response.status
       when 400
-        raise Error, "#{response.body["error_description"]}"
+        raise Error, response.body["error_description"].to_s
       when 401
-        raise Error, "#{response.body["error_description"]}"
+        raise Error, response.body["error_description"].to_s
       when 403
-        raise Error, "#{response.body["error_description"]}"
+        raise Error, response.body["error_description"].to_s
       when 404
-        raise Error, "#{response.body["error_description"]}"
+        raise Error, response.body["error_description"].to_s
       when 429
-        raise Error, "#{response.body["error_description"]}"
+        raise Error, response.body["error_description"].to_s
       when 500
-        raise Error, "#{response.body["error_description"]}"
+        raise Error, response.body["error_description"].to_s
       when 503
-        raise Error, "#{response.body["error_description"]}"
+        raise Error, response.body["error_description"].to_s
       end
 
       response

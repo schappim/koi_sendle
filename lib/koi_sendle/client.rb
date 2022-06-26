@@ -3,17 +3,14 @@ require "faraday"
 require "faraday_middleware"
 
 module KoiSendle
-
   class Client
-
     attr_reader :api_key, :api_secret, :adapter, :authorization
 
-    def initialize(api_key:, api_secret:, adapter:Faraday.default_adapter, sandbox: false, stubs: nil)
-      
+    def initialize(api_key:, api_secret:, adapter: Faraday.default_adapter, sandbox: false, stubs: nil)
       @api_key = api_key
       @adapter = adapter
 
-      @base_uri = sandbox ?  'https://sandbox.sendle.com/api' : 'https://api.sendle.com/api'  
+      @base_uri = sandbox ? "https://sandbox.sendle.com/api" : "https://api.sendle.com/api"
       @api_key = api_key
       @api_secret = api_secret
       @adapter = adapter
@@ -50,7 +47,5 @@ module KoiSendle
         conn.adapter adapter, @stubs
       end
     end
-
   end
-
 end
